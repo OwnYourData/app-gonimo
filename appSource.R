@@ -9,8 +9,21 @@ appSource <- function(){
                        # uiOutput('desktopUiSourceItemsRender')
                        tabsetPanel(
                                type='tabs',
-                               tabPanel('Tab1',
-                                        p('hello world')
+                               tabPanel('Gonimo',
+                                        br(),
+                                        helpText('Starte das Browser-basierte Babyphon von Gonimo und zeichne in deinem Datentresor die Geräusche in der Nacht auf:'),
+                                        fluidRow(column(3, 
+                                                        img(src='gonimo.png', width='200px', alt='Gonimo')),
+                                                 column(9,
+                                                        p(span('Webseite von Gonimo:'),
+                                                          a('https://Gonimo.com', href='https://www.gonimo.com')),
+                                                        h3('Anleitung zur Einrichtung von OwnYourData'),
+                                                        tags$ol(
+                                                                tags$li('öffne in deinem Datentresor das Detail-Fenster der Gonimo-App und notiere das Passwort'),
+                                                                tags$li('wähle im Browserfenster von Gonimo Menü > Weitere Tools > Entwicklertools'),
+                                                                tags$li('unter Applications > Local Storage > https://app.alpha.gonimo.com trage die folgenden Werte ein:')
+                                                        ))
+                                        )
                                )
                        )
                 )
