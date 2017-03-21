@@ -3,7 +3,7 @@
 
 # Comments ================================================
 # - run locally
-#   runApp('~/oyd/gonimo', host='0.0.0.0', port=1234)
+#   runApp('~/oyd/gonimo', host='0.0.0.0', port=1246)
 # - copy files to Github
 #   cp -r *.R *.r *.txt www docker github/app-gonimo; cd github/app-gonimo;
 

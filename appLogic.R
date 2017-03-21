@@ -29,3 +29,31 @@ repoData <- function(repo){
 appStart <- function(){
 
 }
+
+output$gonimoChart <- renderPlotly({
+        data <- currDataDateSelectTimestamp()
+        pdf(NULL)
+        outputPlot <- plotly_empty()
+        data$dat <- as.Date(as.POSIXct(data$time/1000, origin = '1970-01-01'))
+        data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
+        data$val <- as.numeric(data$volume)
+        if(nrow(data) > 0){
+                save(data, file='tmpXdata.RData')
+                outputPlot <- plot_ly(
+                        data,
+                        x = ~data$date,
+                        y = ~data$val,
+                        type = 'bar'
+                ) %>% add_line() %>% layout( title = '',
+                              showlegend = FALSE,
+                              margin = list(l = 80, r = 80),
+                              yaxis = list(title = 'Lautstärke'),
+                              xaxis = list(
+                                title = '',
+                                rangeslider = list(type = 'date'))
+                )
+        }
+        dev.off()
+        outputPlot
+        
+})

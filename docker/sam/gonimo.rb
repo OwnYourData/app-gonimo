@@ -1,7 +1,7 @@
 App.new("identifier"=>"eu.ownyourdata.gonimo", 
         "version"=>"1.0.0", 
         "versionNumber"=>1, 
-        "description"=>"Zeichne Geräusche des Babymonitors Gonimo auf und beobachte damit den Schlaf deines Kindes.", 
+        "description"=>"Zeichne Ger&auml;usche via Gonimo auf und analysiere damit den Schlaf deines Kindes.", 
         "permissionStr"=>"eu.ownyourdata.info:read, eu.ownyourdata.info:write, eu.ownyourdata.info:update, eu.ownyourdata.gonimo:read, eu.ownyourdata.gonimo.*:read, eu.ownyourdata.gonimo*:write, eu.ownyourdata.gonimo*:update, eu.ownyourdata.gonimo*:delete", 
         "name"=>"Gonimo", 
         "appUrl"=>"https://gonimo.datentresor.org", 

@@ -6,6 +6,7 @@ appName <- 'gonimo'
 appTitle <- 'Gonimo'
 app_id <- 'eu.ownyourdata.gonimo'
 helpUrl <- 'https://www.ownyourdata.eu/apps/gonimo'
+mobileUrl <- ''
 
 # definition of data structure
 currRepoSelect <- ''
