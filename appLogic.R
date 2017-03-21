@@ -38,7 +38,6 @@ output$gonimoChart <- renderPlotly({
         data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
         data$val <- as.numeric(data$volume)
         if(nrow(data) > 0){
-                save(data, file='tmpXdata.RData')
                 outputPlot <- plot_ly(
                         data,
                         x = ~data$date,
