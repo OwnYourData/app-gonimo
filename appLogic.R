@@ -37,12 +37,15 @@ output$gonimoChart <- renderPlotly({
         data$dat <- as.Date(as.POSIXct(data$time/1000, origin = '1970-01-01'))
         data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
         data$val <- as.numeric(data$volume)
+        data$color <- 'blue'
+        data[data$val > 0.3, 'color'] <- 'orange'
         if(nrow(data) > 0){
                 outputPlot <- plot_ly(
                         data,
                         x = ~data$date,
                         y = ~data$val,
-                        type = 'bar'
+                        type = 'bar', 
+                        marker = list(color = data$color)
                 ) %>% layout( title = '',
                               showlegend = FALSE,
                               margin = list(l = 80, r = 80),
