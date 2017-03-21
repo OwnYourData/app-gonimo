@@ -43,7 +43,7 @@ output$gonimoChart <- renderPlotly({
                         x = ~data$date,
                         y = ~data$val,
                         type = 'bar'
-                ) %>% add_line() %>% layout( title = '',
+                ) %>% layout( title = '',
                               showlegend = FALSE,
                               margin = list(l = 80, r = 80),
                               yaxis = list(title = 'Lautstärke'),
