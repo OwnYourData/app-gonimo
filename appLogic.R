@@ -52,7 +52,7 @@ output$gonimoChart <- renderPlotly({
                 data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
                 data$val <- as.numeric(data$volume)
                 data$color <- 'blue'
-                data[data$val > 0.6, 'color'] <- 'orange'
+                data[data$val > 0.4, 'color'] <- 'orange'
                 outputPlot <- plot_ly(
                         data,
                         x = ~data$date,
