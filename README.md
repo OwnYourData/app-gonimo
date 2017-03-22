@@ -10,6 +10,8 @@ Die App Gonimo wird in einem sicheren Datentresor installiert. Üblicherweise mu
 Mehr Infos und Demo: https://www.ownyourdata.eu  
 Hintergrund-Infos für Entwickler: https://www.ownyourdata.eu/developer/
 
+&nbsp;    
+
 ## Installation
 
 Du kannst entscheiden wo du deinen Datentresor einrichten und deine Apps installieren möchtest: auf deinem persönlichen OwnYourData-Server, auf einem anderen Cloud-Dienst deiner Wahl, auf deinem eigenen Computer oder auf einem Raspberry Pi bei Dir daheim.
@@ -45,6 +47,8 @@ Gonimo steht auch für die Architektur armhf zur Verfügung. Die Installation er
 * zur einfachen Installation von Docker am Raspberry empfehlen wir die SD-Card Images von Hypriot: http://blog.hypriot.com/downloads/
 * Befehl zum Start des Containers am Raspberry: `docker run -p 3838:3838 oydeu/app-gonimo_armhf`
 
+&nbsp;    
+
 ## Datenstruktur
 
 Die folgenden Listen werden von Gonimo verwendet:
@@ -55,6 +59,7 @@ Die folgenden Listen werden von Gonimo verwendet:
     - `name`: konfigurierter Babyname  
 * Info - Informationen zum Datentresor
 
+&nbsp;    
 
 ## Verbessere Gonimo
 
@@ -67,6 +72,8 @@ Wenn du selbst an der App mitentwickeln möchtest, folge diesen Schritten:
 3. Commit deine Änderungen: `git commit -am 'Add some feature'`
 4. Push in den Branch: `git push origin my-new-feature`
 5. Sende einen Pull Request
+
+&nbsp;    
 
 ## Lizenz
 
