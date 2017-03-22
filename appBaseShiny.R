@@ -127,8 +127,8 @@ currDataDateSelectTimestamp <- reactive({
         } else {
                 createAlert(session, 'dataStatus', alertId = 'myDataStatus',
                             style = 'warning', append = FALSE,
-                            title = 'Keine Website-Daten im Datentresor vorhanden',
-                            content = 'Derzeit sind noch keine Website-Daten im Datentresor gespeichert. Wechsle zu "Datenquellen" und installiere das passende Plugin für deinen Browser!')
+                            title = 'Keine Daten im Datentresor vorhanden',
+                            content = 'Derzeit sind noch keine Daten im Datentresor gespeichert. Wechsle zu "Datenquellen" und folge der Anleitung!')
                 data.frame()
         }
 })
