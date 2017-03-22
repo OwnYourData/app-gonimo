@@ -27,19 +27,32 @@ repoData <- function(repo){
 
 # anything that should run only once during startup
 appStart <- function(){
-
+        data <- currData()
+        babies <- unique(data$name)
+        babies[is.na(babies)] <- '<leer>'
+        updateSelectInput(session, 'babySelect',
+                          choices = c('alle', babies))
+        gonimoSetup <- paste0(
+                "localStorage.setItem('OYD', JSON.stringify({piaURL:'", 
+                piaUrl,
+                "', appSecret:'",
+                appSecret,
+                "', interval:5000",
+                ", threshold:0.3",
+                "}));")
+        session$sendCustomMessage(type='setGonimoSetup', gonimoSetup)
 }
 
 output$gonimoChart <- renderPlotly({
         data <- currDataDateSelectTimestamp()
         pdf(NULL)
         outputPlot <- plotly_empty()
-        data$dat <- as.Date(as.POSIXct(data$time/1000, origin = '1970-01-01'))
-        data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
-        data$val <- as.numeric(data$volume)
-        data$color <- 'blue'
-        data[data$val > 0.3, 'color'] <- 'orange'
         if(nrow(data) > 0){
+                data$dat <- as.Date(as.POSIXct(data$time/1000, origin = '1970-01-01'))
+                data$date <- as.POSIXct(data$time/1000, origin = '1970-01-01')
+                data$val <- as.numeric(data$volume)
+                data$color <- 'blue'
+                data[data$val > 0.3, 'color'] <- 'orange'
                 outputPlot <- plot_ly(
                         data,
                         x = ~data$date,

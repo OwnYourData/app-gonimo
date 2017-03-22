@@ -73,14 +73,16 @@ r2d <- function(response){
                                                         data.frame()
                                                 } else {
                                                         # convert list to data.frame
-                                                        do.call(bind_rows, 
-                                                                lapply(retVal, 
-                                                                       function(x) data.frame(t(sapply(x,c)), stringsAsFactors = FALSE)))
+                                                        jsonlite::fromJSON(response)
+                                                        # do.call(bind_rows, 
+                                                        #         lapply(retVal, 
+                                                        #                function(x) data.frame(t(sapply(x,c)), stringsAsFactors = FALSE)))
                                                 }
                                         } else {
-                                                do.call(bind_rows, 
-                                                        lapply(retVal, 
-                                                               function(x) data.frame(t(sapply(x,c)), stringsAsFactors = FALSE)))
+                                                jsonlite::fromJSON(response)
+                                                # do.call(bind_rows, 
+                                                #         lapply(retVal, 
+                                                #                function(x) data.frame(t(sapply(x,c)), stringsAsFactors = FALSE)))
                                         }
                                 }
                         }
@@ -121,7 +123,7 @@ readItems <- function(app, repo_url) {
                                         error = function(e) { return(NA) })
                                 subData <- r2d(response)
                                 if(nrow(respData)>0){
-                                        respData <- rbind(respData, subData)
+                                        respData <- bind_rows(respData, subData) #rbind(respData, subData)
                                 } else {
                                         respData <- subData
                                 }

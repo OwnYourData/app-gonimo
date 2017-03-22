@@ -1,14 +1,14 @@
 # layout for section "Status"
 # last update: 2016-10-10
 
-source('uiStatusDateSelect.R')
+source('appStatusDateSelect.R')
 # source('uiStatusItemConfig.R')
 
 appStatus <- function(){
         fluidRow(
                 column(12, 
                        # uiOutput('desktopUiStatusItemsRender')
-                       uiStatusDateSelect(),
+                       appStatusDateSelect(),
                        bsAlert('dataStatus'),
                        tabsetPanel(type='tabs',
                                    tabPanel('Verlauf', br(),

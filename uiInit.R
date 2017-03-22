@@ -35,7 +35,11 @@ uiInit <- function(){
                         })'),
                 tags$script(
                         'Shiny.addCustomMessageHandler("setMobileUrl", function(x) {      
-                                $("#mobile_url").attr("href", x);
+                        $("#mobile_url").attr("href", x);
+                        })'),
+                tags$script(
+                        'Shiny.addCustomMessageHandler("setGonimoSetup", function(x) {      
+                        $("#gonimo_setup").text(x);
                         })'),
                 tags$script(
                         'Shiny.addCustomMessageHandler("openUrlInNewTab", function(x) {      

@@ -93,6 +93,14 @@ currData <- reactive({
 currDataDateSelectTimestamp <- reactive({
         closeAlert(session, 'myDataStatus')
         data <- currData()
+        selBaby <- input$babySelect
+        if(selBaby != 'alle'){
+                if(selBaby == '<leer>'){
+                        data <- data[is.na(data$name), ]
+                } else {
+                        data <- data[data$name == selBaby, ]
+                }
+        }
         if(nrow(data) > 0){
                 mymin <- as.Date(input$dateRange[1], '%d.%m.%Y')
                 mymax <- as.Date(input$dateRange[2], '%d.%m.%Y')
